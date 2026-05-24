@@ -24,10 +24,33 @@
   #audio-bar span { font-size: 11px; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; }
 
   #hero {
-  min-height: 100vh; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; text-align: center;
-  padding: 3rem 2rem; position: relative; overflow: hidden;
+  display: flex;
+  flex-direction: column; /* imagen arriba, texto abajo */
+  min-height: 100vh;
+  position: relative;
   background: var(--dark);
+}
+
+#hero-bg {
+  width: 100%;
+  height: 60vh; /* ← altura de la imagen, ajusta a tu gusto */
+  background-image: url('luces.jpeg');
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+#hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem 4rem;
+}
+
+.ornament {
+  margin-top: 35vh; /* ← ajusta este valor */
 }
 
 @keyframes heroZoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }
@@ -49,13 +72,13 @@
 
   #hero::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(ellipse at center top, rgba(184,147,90,0.10) 0%, transparent 65%);
+    background: radial-gradient(ellipse at center top, rgba(188, 145, 81, 0.1) 0%, transparent 65%);
     pointer-events: none;
   }
   .ornament { color: var(--gold); font-size: 1.2rem; letter-spacing: 0.5em; opacity: 0.6; margin-bottom: 1.5rem; }
-  .hero-sub { font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: white; margin-bottom: 1rem; }
-  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(4rem, 12vw, 9rem); font-weight: 300; line-height: 0.95; color: var(--dark); margin-bottom: 0.3rem; }
-  h1 em { font-style: italic; color: var(--gold); display: block; }
+  .hero-sub { font-size: 0.90rem; letter-spacing: 0.35em; text-transform: uppercase; color: white; margin-bottom: 1rem; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(4rem, 12vw, 9rem); font-weight: 300; line-height: 0.95; color: white ; margin-bottom: 0.3rem; }
+  h1 em { font-style: italic; color: white; display: block; }
   .ampersand { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 6vw, 4rem); font-style: italic; color: var(--gold-light); display: block; margin: 0.2rem 0; }
   .hero-date { margin-top: 2rem; font-size: 0.78rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
   .divider { width: 80px; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); margin: 1.5rem auto; }
@@ -88,7 +111,7 @@
   .gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 2.5rem; }
   .gallery-grid .photo { border-radius: 4px; overflow: hidden; aspect-ratio: 3/4; position: relative; background: var(--warm); }
   .gallery-grid .photo.wide { grid-column: span 2; aspect-ratio: 16/9; }
-  .gallery-grid .photo.tall { grid-row: span 2; aspect-ratio: unset; }
+  .gallery-grid .photo.tall { grid-row: span 2; aspect-ratio:3 / 4; /* retrato, ajusta según tu foto */}
   .gallery-grid .photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
   .gallery-grid .photo:hover img { transform: scale(1.04); }
 

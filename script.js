@@ -21,7 +21,7 @@
 
   tryAutoplay();
 
-  const weddingDate = new Date(2026, 5, 14, 18, 0, 0);
+  const weddingDate = new Date(2026, 5, 26, 18, 0, 0);
   function updateCountdown() {
     const diff = weddingDate - new Date();
     if (diff <= 0) { ['days','hours','mins','secs'].forEach(k => document.getElementById('cd-'+k).textContent='0'); return; }
