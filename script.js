@@ -45,8 +45,7 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 // ── RSVP ─────────────────────────────────────────────────────────────────────
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyInK3S7rYURoYTCnM2CB82YijhgCpVbdbsFmxNVO1FcExXV9Gz4_UwDLVOMqZSK6RImA/exec';
-
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyi61RbJIhjWLZh6g7MEXAnwGva67_pX0t_lUjztLapSiZJ9YU0p9dvUjLc8v_mDWARbA/exec"
 const guestAsiste = document.getElementById('guestAsiste');
 if (guestAsiste) {
   guestAsiste.addEventListener('change', function () {

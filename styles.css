@@ -33,8 +33,8 @@
  
 #hero-bg {
   width: 100%;
-  height: 60vh; /* ← altura de la imagen, ajusta a tu gusto */
-  background-image: url('luces.jpeg');
+  height: 130vh; /* ← altura de la imagen, ajusta a tu gusto */
+  background-image: url('fondo\ brillante.jpeg');
   background-size: cover;
   background-position: center center;
   opacity: 0.8;
