@@ -33,10 +33,10 @@
  
 #hero-bg {
   width: 100%;
-  height: 130vh; /* ← altura de la imagen, ajusta a tu gusto */
-  background-image: url('fondo\ brillante.jpeg');
+  height: 100vh; /* ← altura de la imagen, ajusta a tu gusto */
+  background-image: url("Portada.jpeg");
   background-size: cover;
-  background-position: center center;
+  background-position: bottom center;
   opacity: 0.8;
   flex-shrink: 0;
 }
@@ -50,7 +50,7 @@
 }
  
 .ornament {
-  margin-top: 35vh; /* ← ajusta este valor */
+  margin-top: 10vh; /* ← ajusta este valor */
 }
  
 @keyframes heroZoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }
@@ -80,7 +80,7 @@
   h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(4rem, 12vw, 9rem); font-weight: 300; line-height: 0.95; color: white ; margin-bottom: 0.3rem; }
   h1 em { font-style: italic; color: white; display: block; }
   .ampersand { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 6vw, 4rem); font-style: italic; color: var(--gold-light); display: block; margin: 0.2rem 0; }
-  .hero-date { margin-top: 2rem; font-size: 0.78rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
+  .hero-date { margin-top: 2rem; font-size: 2rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
   .divider { width: 80px; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); margin: 1.5rem auto; }
   .scroll-hint {
     position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
@@ -105,23 +105,54 @@
   .count-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--dark); line-height: 1; display: block; }
   .count-label { font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-top: 0.4rem; display: block; }
  
-  /* GALLERY */
-  #gallery-section { padding: 5rem 1.5rem; max-width: 100%; margin: 0 auto; }
-  #gallery-section .inner { max-width: 900px; margin: 0 auto; text-align: center; }
-  .gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 2.5rem; }
-  .gallery-grid .photo { border-radius: 4px; overflow: hidden; aspect-ratio: 3/4; position: relative; background: var(--warm); }
-  .gallery-grid .photo.wide { grid-column: span 2; aspect-ratio: 16/9; }
-  .gallery-grid .photo.tall { grid-row: span 2; aspect-ratio:3 / 4; /* retrato, ajusta según tu foto */}
-  .gallery-grid .photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
-  .gallery-grid .photo:hover img { transform: scale(1.04); }
- 
+/* GALLERY */
+#gallery-section { padding: 5rem 1.5rem; max-width: 100%; margin: 0 auto; }
+#gallery-section .inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 2.5rem;
+}
+.gallery-grid .photo {
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: var(--warm);
+}
+.gallery-grid .photo.full {
+  grid-column: span 3;
+  aspect-ratio: 21/9;
+}
+.gallery-grid .photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.gallery-grid .photo:hover img { transform: scale(1.04); }
   /* VIDEO */
-  .video-wrapper {
-    margin-top: 2.5rem; aspect-ratio: 16/9; border-radius: 4px; overflow: hidden;
-    border: 1px solid rgba(184,147,90,0.2); background: var(--warm);
-    display: block; align-items: center; justify-content: center;
-    color: var(--muted); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
-  }
+ .video-wrapper {
+  margin-top: 2.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(184,147,90,0.2);
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 80vh;
+}
+
+.video-wrapper video {
+  width: auto;
+  height: 80vh;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
  
   /* LOCATIONS */
   .locations-grid { display: grid; justify-content: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; text-align: left;  max-width: 700px;  margin-left: auto; margin-right: auto;
@@ -146,7 +177,7 @@
   /* RSVP */
   #rsvp { background: linear-gradient(135deg, var(--dark) 0%, var(--brown) 100%); max-width: 100%; padding: 6rem 2rem; color: white; }
   #rsvp .inner { max-width: 580px; margin: 0 auto; text-align: center; }
-  #rsvp .section-label { color: var(--gold-light); }
+  #rsvp .section-label { color: var(--gold-light); font-size: 1rem; }
   #rsvp h2 { color: white; }
   #rsvp p.body-text { color: rgba(255,255,255,0.55); }
   .rsvp-form { display: flex; flex-direction: column; gap: 12px; margin-top: 2.5rem; align-items: center; }
@@ -238,4 +269,12 @@
   font-size: 0.85rem;
   color: var(--muted);
   line-height: 1.8;
+}
+
+.gallery-grid .photo.full img {
+  object-position: center 20%;
+}
+
+.emoticon {
+  font-size: 2rem;
 }
